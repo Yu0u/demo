@@ -12,7 +12,7 @@ public enum CustomCode {
     USER_NOT_EXIST(1003,"用户不存在"),
     NOT_LOGIN(1004,"你尚未登录"),
     //参数校验失败响应
-    USERNAME_OR_PASSWORD_ERROR(1002, "用户名或密码错误");
+    USERNAME_OR_PASSWORD_ERROR(1005, "用户名或密码错误");
     private Integer code;
     private String msg;
     CustomCode(Integer code, String msg) {
