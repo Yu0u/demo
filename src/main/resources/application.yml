@@ -1,0 +1,13 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://47.113.98.212:3306/test?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2B8
+    username: gull
+    password: 1402409799glx
+  jpa:
+    show-sql: true
+    database: mysql
+    hibernate:
+      ddl-auto: update
