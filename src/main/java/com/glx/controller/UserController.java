@@ -15,21 +15,20 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpSession;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping(value = "/user",produces = "application/json")
 public class UserController {
     @Autowired
     private UserService userService;
 
     @PostMapping("/login")
-    public Response login(@RequestParam String username,
-                          @RequestParam String password){
+    public Response login(@RequestBody User user){
         Subject subject = SecurityUtils.getSubject();
         if (!subject.isAuthenticated()){
-            UsernamePasswordToken token = new UsernamePasswordToken(username, password);
+            UsernamePasswordToken token = new UsernamePasswordToken(user.getUsername(), user.getPassword());
             subject.login(token);
             return Response.ok().message("登陆成功");
         }else {
-            return Response.ok().message("你已登录，请勿重复登陆");
+            return Response.ok().message("你已登录，请勿重复登陆").code(403);
         }
     }
     @GetMapping("/logout")
@@ -46,8 +45,8 @@ public class UserController {
 
     }
     @PostMapping("/register")
-    public Response register(@RequestParam String username, @RequestParam String password){
-        userService.CreateUser(username,password);
+    public Response register(@RequestBody User user){
+        userService.CreateUser(user.getUsername(), user.getPassword());
         return Response.ok().message("注册成功");
     }
 }
