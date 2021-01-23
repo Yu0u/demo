@@ -53,7 +53,7 @@
 ```json
 {
 	"success": false,
-	"code": 1002,
+	"code": 403,
 	"message": "用户已存在",
 	"data": null
 }
@@ -96,7 +96,7 @@
 ```
 {
 	"success": false,
-	"code": 400,
+	"code": 403,
 	"message": "密码错误",
 	"data": null
 }
@@ -131,7 +131,7 @@
 ```json
 {
 	"success": false,
-	"code": 1004,
+	"code": 401,
 	"message": "你尚未登录",
 	"data": null
 }
