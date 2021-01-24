@@ -41,7 +41,8 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(UnknownAccountException.class)
     @ResponseBody
     public Response unknownAccountException(UnknownAccountException e){
-        return Response.error().message(CustomCode.USER_NOT_EXIST.getMsg()).code(CustomCode.USER_NOT_EXIST.getCode());
+        return Response.error().message(CustomCode.USER_NOT_EXIST.getMsg()).
+                code(CustomCode.USER_NOT_EXIST.getCode());
     }
 
     @ExceptionHandler(AuthenticationException.class)
