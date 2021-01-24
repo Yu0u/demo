@@ -42,7 +42,6 @@ public class UserController {
                     .message(CustomCode.NOT_LOGIN.getMsg())
                     .code(CustomCode.NOT_LOGIN.getCode());
         }
-
     }
     @PostMapping("/register")
     public Response register(@RequestBody User user){
